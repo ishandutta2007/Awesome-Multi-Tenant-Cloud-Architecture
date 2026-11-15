@@ -1,0 +1,224 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="100%" height="360" style="background:#0a0f1d;border-radius:16px;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1329" />
+      <stop offset="50%" stop-color="#0a0f1d" />
+      <stop offset="100%" stop-color="#060913" />
+    </linearGradient>
+
+    <!-- Title Gradient -->
+    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+
+    <!-- Accent Gradients -->
+    <linearGradient id="tenantBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="100%" stop-color="#0369a1" />
+    </linearGradient>
+    <linearGradient id="tenantPurple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#6d28d9" />
+    </linearGradient>
+    <linearGradient id="tenantEmerald" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.75" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.85" />
+    </linearGradient>
+
+    <!-- Filters -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="subtleGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <!-- Grid Pattern -->
+    <pattern id="cloudGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#334155" stroke-width="0.75" stroke-opacity="0.25" />
+    </pattern>
+  </defs>
+
+  <style>
+    /* Dynamic Animated Aspects */
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.3; transform: scale(1); }
+      50% { opacity: 0.55; transform: scale(1.12); }
+    }
+    @keyframes floatCard1 {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-7px); }
+    }
+    @keyframes floatCard2 {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-9px); }
+    }
+    @keyframes floatCard3 {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-6px); }
+    }
+    @keyframes dataFlow {
+      0% { stroke-dashoffset: 40; }
+      100% { stroke-dashoffset: 0; }
+    }
+    @keyframes pingDot {
+      0% { r: 3px; opacity: 1; }
+      100% { r: 9px; opacity: 0; }
+    }
+
+    .pulse-orb-1 {
+      transform-origin: 200px 100px;
+      animation: pulseGlow 7s ease-in-out infinite;
+    }
+    .pulse-orb-2 {
+      transform-origin: 950px 240px;
+      animation: pulseGlow 9s ease-in-out infinite 1.5s;
+    }
+    .tenant-card-1 {
+      animation: floatCard1 4.5s ease-in-out infinite;
+    }
+    .tenant-card-2 {
+      animation: floatCard2 5.5s ease-in-out infinite 0.8s;
+    }
+    .tenant-card-3 {
+      animation: floatCard3 5s ease-in-out infinite 1.6s;
+    }
+    .flow-line {
+      stroke-dasharray: 6 6;
+      animation: dataFlow 1.8s linear infinite;
+    }
+    .ping-circle {
+      animation: pingDot 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+    }
+  </style>
+
+  <!-- Background Base -->
+  <rect width="100%" height="100%" fill="url(#bgGrad)" />
+  <rect width="100%" height="100%" fill="url(#cloudGrid)" />
+
+  <!-- Dynamic Ambient Glow Orbs in Background -->
+  <circle cx="220" cy="110" r="170" fill="#38bdf8" filter="url(#glow)" opacity="0.12" class="pulse-orb-1" />
+  <circle cx="980" cy="220" r="210" fill="#818cf8" filter="url(#glow)" opacity="0.14" class="pulse-orb-2" />
+  <circle cx="600" cy="280" r="150" fill="#c084fc" filter="url(#glow)" opacity="0.08" />
+
+  <!-- Architectural Isolation & Data Mesh Graphics (Right Side) -->
+  <g transform="translate(730, 45)">
+    <!-- Cloud Gateway Hub -->
+    <rect x="130" y="20" width="160" height="42" rx="10" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5" stroke-opacity="0.8" />
+    <circle cx="150" cy="41" r="5" fill="#38bdf8" filter="url(#subtleGlow)" />
+    <circle cx="150" cy="41" r="5" fill="none" stroke="#38bdf8" class="ping-circle" />
+    <text x="165" y="46" fill="#f8fafc" font-size="12" font-weight="700" letter-spacing="0.5">SHARED API GATEWAY</text>
+
+    <!-- Interconnect Routing Lines -->
+    <path d="M 160 62 L 60 120" fill="none" stroke="#38bdf8" stroke-width="1.8" class="flow-line" opacity="0.75" />
+    <path d="M 210 62 L 210 120" fill="none" stroke="#a855f7" stroke-width="1.8" class="flow-line" opacity="0.75" />
+    <path d="M 260 62 L 360 120" fill="none" stroke="#10b981" stroke-width="1.8" class="flow-line" opacity="0.75" />
+
+    <!-- Tenant 1 Card (Isolated Pod) -->
+    <g class="tenant-card-1">
+      <rect x="0" y="120" width="120" height="110" rx="12" fill="url(#cardGrad)" stroke="#38bdf8" stroke-width="1.2" stroke-opacity="0.6" />
+      <rect x="10" y="132" width="100" height="22" rx="6" fill="url(#tenantBlue)" />
+      <text x="60" y="147" text-anchor="middle" fill="#ffffff" font-size="10" font-weight="700">TENANT ALPHA</text>
+      <circle cx="24" cy="172" r="3.5" fill="#38bdf8" />
+      <text x="34" y="175" fill="#94a3b8" font-size="9" font-weight="500">Virtual DB (Pool)</text>
+      <circle cx="24" cy="192" r="3.5" fill="#38bdf8" />
+      <text x="34" y="195" fill="#94a3b8" font-size="9" font-weight="500">RLS Isolated</text>
+      <circle cx="24" cy="212" r="3.5" fill="#38bdf8" />
+      <text x="34" y="215" fill="#38bdf8" font-size="9" font-weight="600">SLA: 99.99%</text>
+    </g>
+
+    <!-- Tenant 2 Card (Isolated Pod) -->
+    <g class="tenant-card-2">
+      <rect x="150" y="120" width="120" height="110" rx="12" fill="url(#cardGrad)" stroke="#a855f7" stroke-width="1.2" stroke-opacity="0.6" />
+      <rect x="160" y="132" width="100" height="22" rx="6" fill="url(#tenantPurple)" />
+      <text x="210" y="147" text-anchor="middle" fill="#ffffff" font-size="10" font-weight="700">TENANT BETA</text>
+      <circle cx="174" cy="172" r="3.5" fill="#c084fc" />
+      <text x="184" y="175" fill="#94a3b8" font-size="9" font-weight="500">Siloed Compute</text>
+      <circle cx="174" cy="192" r="3.5" fill="#c084fc" />
+      <text x="184" y="195" fill="#94a3b8" font-size="9" font-weight="500">K8s Namespace</text>
+      <circle cx="174" cy="212" r="3.5" fill="#c084fc" />
+      <text x="184" y="215" fill="#c084fc" font-size="9" font-weight="600">Encrypted KMS</text>
+    </g>
+
+    <!-- Tenant 3 Card (Isolated Pod) -->
+    <g class="tenant-card-3">
+      <rect x="300" y="120" width="120" height="110" rx="12" fill="url(#cardGrad)" stroke="#10b981" stroke-width="1.2" stroke-opacity="0.6" />
+      <rect x="310" y="132" width="100" height="22" rx="6" fill="url(#tenantEmerald)" />
+      <text x="360" y="147" text-anchor="middle" fill="#ffffff" font-size="10" font-weight="700">TENANT GAMMA</text>
+      <circle cx="324" cy="172" r="3.5" fill="#34d399" />
+      <text x="334" y="175" fill="#94a3b8" font-size="9" font-weight="500">Serverless Edge</text>
+      <circle cx="324" cy="192" r="3.5" fill="#34d399" />
+      <text x="334" y="195" fill="#94a3b8" font-size="9" font-weight="500">Dispatch Route</text>
+      <circle cx="324" cy="212" r="3.5" fill="#34d399" />
+      <text x="334" y="215" fill="#34d399" font-size="9" font-weight="600">Zero-Trust Net</text>
+    </g>
+  </g>
+
+  <!-- Left Side: Core Foreground Title and Messaging -->
+  <g transform="translate(70, 0)">
+    <!-- Category Badge -->
+    <g transform="translate(0, 62)">
+      <rect width="260" height="30" rx="15" fill="#1e293b" stroke="#38bdf8" stroke-width="1" stroke-opacity="0.4" />
+      <circle cx="16" cy="15" r="4.5" fill="#38bdf8" filter="url(#subtleGlow)" />
+      <text x="29" y="19" fill="#38bdf8" font-size="11.5" font-weight="700" letter-spacing="1">ENTERPRISE SAAS &amp; CLOUD INFRA</text>
+    </g>
+
+    <!-- Main Title -->
+    <text x="0" y="140" fill="url(#titleGrad)" font-size="40" font-weight="800" letter-spacing="-0.5" filter="url(#subtleGlow)">
+      Awesome Multi-Tenant
+    </text>
+    <text x="0" y="185" fill="#ffffff" font-size="38" font-weight="800" letter-spacing="-0.5">
+      Cloud Architecture ☁️
+    </text>
+
+    <!-- Subtitle / Mission Statement -->
+    <text x="0" y="224" fill="#94a3b8" font-size="14.5" font-weight="400">
+      Curated platforms, isolation models, data tiering &amp; open-source
+    </text>
+    <text x="0" y="246" fill="#94a3b8" font-size="14.5" font-weight="400">
+      frameworks for scaling secure B2B &amp; multi-organization SaaS.
+    </text>
+
+    <!-- Architecture Capability Badges -->
+    <g transform="translate(0, 276)">
+      <!-- Pill 1: Tenant Isolation -->
+      <g transform="translate(0, 0)">
+        <rect width="140" height="28" rx="7" fill="#0f172a" stroke="#334155" stroke-width="1" />
+        <circle cx="14" cy="14" r="3" fill="#38bdf8" />
+        <text x="25" y="18" fill="#e2e8f0" font-size="11" font-weight="600">Tenant Isolation</text>
+      </g>
+
+      <!-- Pill 2: Database Partitioning -->
+      <g transform="translate(148, 0)">
+        <rect width="145" height="28" rx="7" fill="#0f172a" stroke="#334155" stroke-width="1" />
+        <circle cx="14" cy="14" r="3" fill="#818cf8" />
+        <text x="25" y="18" fill="#e2e8f0" font-size="11" font-weight="600">Silo vs Pool Models</text>
+      </g>
+
+      <!-- Pill 3: IAM & Governance -->
+      <g transform="translate(301, 0)">
+        <rect width="150" height="28" rx="7" fill="#0f172a" stroke="#334155" stroke-width="1" />
+        <circle cx="14" cy="14" r="3" fill="#c084fc" />
+        <text x="25" y="18" fill="#e2e8f0" font-size="11" font-weight="600">IAM &amp; Organizations</text>
+      </g>
+
+      <!-- Pill 4: Metering & Billing -->
+      <g transform="translate(459, 0)">
+        <rect width="155" height="28" rx="7" fill="#0f172a" stroke="#334155" stroke-width="1" />
+        <circle cx="14" cy="14" r="3" fill="#34d399" />
+        <text x="25" y="18" fill="#e2e8f0" font-size="11" font-weight="600">Metering &amp; Tiering</text>
+      </g>
+    </g>
+  </g>
+</svg>
