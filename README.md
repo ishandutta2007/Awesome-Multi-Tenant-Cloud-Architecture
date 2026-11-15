@@ -1,5 +1,3 @@
-# Awesome-Multi-Tenant-Cloud-Architecture
-
 # Awesome Multi-Tenant Cloud Architecture
 
 > A curated list of top Multi-Tenant Cloud Architecture platforms — both SaaS/Hosted commercial solutions and open-source alternatives for building, operating, and governing multi-tenant SaaS applications at scale.
